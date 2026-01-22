@@ -5,6 +5,10 @@
 }
 
 <h1>Menu información</h1>
+@Html.ActionLink("Texto Link", "Action", "Controller",
+    new {variable1 = 12, variable2 = "Dato"}) @* Para enviar informacion de la vista al controller *@
+
+
 <ul>
     <li>
         <a asp-controller="Informacion" asp-action="ControladorVista">
@@ -13,5 +17,9 @@
     </li>
     <li>
         <a asp-controller="Informacion" asp-action="ControladorVistaModel">Controlador --> Vista --> Model</a>
+    </li>
+    <li>
+        @Html.ActionLink("Vista Controlador GET", "VistaControllerGet", "Informacion"
+                ,new { saludo = "Buenos dias", year = 2026 })
     </li>
 </ul>

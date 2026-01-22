@@ -5,7 +5,7 @@ namespace PrimerMVCNetCore.Controllers
 {
     public class InformacionController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index( int variable1, string variable2)
         {
             return View();
         }
@@ -26,6 +26,16 @@ namespace PrimerMVCNetCore.Controllers
             persona.Email = "jorge88@gmail.com";
             persona.Edad = 23;
             return View(persona);
+        }
+
+        [HttpGet]
+        public IActionResult VistaControllerGet(string saludo, int year)
+        {
+            //PARA COMPROBAR QUE HEMOS RECIBIDO LOS DATOS
+            //MEDIANTE UN ActionLink, DEVOLVEMOS UN MENSAJE
+            //A LA VISTA PARA DIBUJARLO
+            ViewData["MENSAJE"] = saludo + " en el año " + year;
+            return View();
         }
 
     }
