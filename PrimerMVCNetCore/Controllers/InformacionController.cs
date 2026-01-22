@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PrimerMVCNetCore.Models;
 
 namespace PrimerMVCNetCore.Controllers
 {
@@ -16,6 +17,15 @@ namespace PrimerMVCNetCore.Controllers
             ViewData["EDAD"] = 20;
             ViewBag.DiaSemana = "Jueves";
             return View();
+        }
+
+        public IActionResult ControladorVistaModel()
+        {
+            Persona persona = new Persona();
+            persona.Nombre = "Jorge";
+            persona.Email = "jorge88@gmail.com";
+            persona.Edad = 23;
+            return View(persona);
         }
 
     }
